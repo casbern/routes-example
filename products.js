@@ -15,7 +15,7 @@ module.exports = {
     })
   },
 
-  put(req, res) {
+  edit(req, res) {
     return res.send('I edit.')
   },
 
