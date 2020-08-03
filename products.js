@@ -28,13 +28,27 @@ module.exports = {
     const baseUrl = req.hostname
     const requestUri = req.originalUrl
     const requestBody = req.body
+    let requestBodyStr = []
+    
+    for(key in requestBody)  {
+      requestBodyStr.push(`${key} = ${requestBody[key]}`)
+    }
 
+    console.log('requestBody',requestBody)
+    console.log('requestBodyStr',requestBodyStr)
+    
+    let requestBodyFinal = requestBodyStr.join("\n    ")
+    console.log('requestBodyFinal',requestBodyFinal)
+    
     return res.send (`
     You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
     According to the REST API this means that we would create a new product with these
     properties.
 
-    You sent the HTTP payload: ${requestBody}   
+    You sent the HTTP payload:
+    
+    ${requestBodyFinal}   
+
     `)
   },
 

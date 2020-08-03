@@ -5,7 +5,7 @@ GET one product
 curl -v -XGET 'http://localhost:8080/products/1'
 
 POST
-curl -v -XPOST 'http://localhost:8080/products/create'
+curl -v -XPOST -H "Accept: application/json" -H "Content-type: application/json" -d '{"name": "my product", "price": 23, "currency": "usd"}' 'http://localhost:8080/products/create'
 
 PUT
 curl -v -XPUT 'http://localhost:8080/products/1'
