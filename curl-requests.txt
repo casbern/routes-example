@@ -1,14 +1,14 @@
 GET all
-curl -XGET 'http://localhost:8080/products'
+curl -v -XGET 'http://localhost:8080/products'
 
 GET one product
-curl -XGET 'http://localhost:8080/products/1'
+curl -v -XGET 'http://localhost:8080/products/1'
 
 POST
-curl -XPOST 'http://localhost:8080/products/create'
+curl -v -XPOST 'http://localhost:8080/products/create'
 
 PUT
-curl -XPUT 'http://localhost:8080/products/1'
+curl -v -XPUT 'http://localhost:8080/products/1'
 
 DELETE
-curl -XDELETE 'http://localhost:8080/products/1'
+curl -v -XDELETE 'http://localhost:8080/products/1'
