@@ -1,25 +1,65 @@
 module.exports = {
   all(req, res) {
-    return res.send('I return all the products.')
+    const requestMethod = req.method
+    const baseUrl = req.hostname
+    const requestUri = req.originalUrl
+
+    return res.send (`
+    You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
+    According to the REST API this means that we would return all
+    products from the DB.
+    `)
   },
 
   product(req, res) {
-    return res.send('I return a chosen product.')
+    const requestMethod = req.method
+    const baseUrl = req.hostname
+    const requestUri = req.originalUrl
+
+    return res.send (`
+    You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
+    According to the REST API this means that we would return the product
+    with the requested id.
+    `)
   },
 
   create(req, res) {
-    return res.send({
+    const requestMethod = req.method
+    const baseUrl = req.hostname
+    const requestUri = req.originalUrl
+
+    return res.send (`
+    You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
+    According to the REST API this means that we would create a new product with these
+    properties.
+    Example: 
+    {
       name: 'my product',
       price: 23,
       currency: 'usd'
-    })
+    }
+    `)
   },
 
   edit(req, res) {
-    return res.send('I edit.')
-  },
+    const requestMethod = req.method
+    const baseUrl = req.hostname
+    const requestUri = req.originalUrl
+
+    return res.send (`
+    You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
+    According to the REST API this means that we would edit the product
+    with the requested id.
+    `)  },
 
   delete(req, res) {
-    return res.send('I delete.')
-  }
+    const requestMethod = req.method
+    const baseUrl = req.hostname
+    const requestUri = req.originalUrl
+
+    return res.send (`
+    You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
+    According to the REST API this means that we would delete the product
+    with the requested id.
+    `)  }
 }

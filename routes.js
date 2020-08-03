@@ -2,10 +2,10 @@ const express = require('express')
 const routes = express.Router()
 const Products = require('./products')
 
-routes.get('/', Products.all)
-routes.get('/prpducts/:id', Products.product)
+routes.get('/products', Products.all)
+routes.get('/products/1', Products.product)
 routes.post('/products/create', Products.create)
-routes.put('/products/:id', Products.edit)
-routes.delete('/products/:id', Products.delete)
+routes.put('/products/1', Products.edit)
+routes.delete('/products/1', Products.delete)
 
 module.exports = routes
