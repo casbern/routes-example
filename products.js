@@ -27,17 +27,14 @@ module.exports = {
     const requestMethod = req.method
     const baseUrl = req.hostname
     const requestUri = req.originalUrl
+    const requestBody = req.body
 
     return res.send (`
     You made a ${requestMethod} HTTP request to http://${baseUrl}:8080${requestUri}.
     According to the REST API this means that we would create a new product with these
     properties.
-    Example: 
-    {
-      name: 'my product',
-      price: 23,
-      currency: 'usd'
-    }
+
+    You sent the HTTP payload: ${requestBody}   
     `)
   },
 
